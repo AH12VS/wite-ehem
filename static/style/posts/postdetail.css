@@ -1,0 +1,218 @@
+/* purple:#d99058 | white:#F3F3F3 */
+
+* {
+    background-color: #F3F3F3;
+}
+
+body {
+    margin: 0;
+    font: 105% "Open Sans", sans-serif;
+    background-color: #F3F3F3;
+    color: #101010;
+}
+
+div.content-div {
+    margin: 5px;
+}
+
+div.content-div img {
+    width: 100% !important;
+    height: auto !important;
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
+/* div.post-detail-div {
+    border-bottom: 3px solid #d99058;
+} */
+
+
+div.post-detail-div .post-name {
+    font-size: 250%;
+    font-weight: 1000;
+    opacity: 0.9;
+    /* overflow-x: scroll; */
+    word-wrap: break-word;
+}
+
+div.post-detail-div .author {
+    font-size: 105%;
+    font: 100% "Open Sans", sans-serif;
+    opacity: 0.5;
+    overflow: scroll;
+}
+
+div.post-detail-div .published-detail {
+    font-size: 105%;
+    font: 100% "Open Sans", sans-serif;
+    opacity: 0.5;
+}
+
+div.post-main-div {
+    font-size: 120%;
+    font-weight: 500;
+    line-height: 150%;
+    text-align: justify;
+    border-top: 3px solid #d99058;
+    border-bottom: 3px solid #d99058;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    padding: 10px;
+}
+
+div.comment-div {
+    background-color: #F1F1F1;
+    border: 1px solid #d99058;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+div.comments-count {
+    font-weight: 100;
+    opacity: 0.7;
+}
+
+div.comments-div {
+    border-top: 1px solid #d99058;
+    border-bottom: 1px solid #d99058;
+    margin: 20px;
+    padding: 10px;
+    opacity: 0.7;
+}
+
+div.new-comment-div {
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+div.comment-name-fld {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div.comment-name-fld .name-lbl {
+    display: block;
+}
+
+div.comment-name-fld .name-inp {
+    display: block;
+    width: 25%;
+    height: 26px;
+    outline: none;
+    border-radius: 5px;
+}
+
+div.comment-text-fld {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div.comment-text-fld .text-lbl {
+    display: block;
+}
+
+div.comment-text-fld .text-inp {
+    display: block;
+    width: 50%;
+    height: 120px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    border-radius: 5px;
+}
+
+
+div.comment-submit-btn button {
+    display: inline-block;
+    height: 30px;
+    border-radius: 5px !important;
+    box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001,
+        inset 0px 0px 0px 0px #fff9,
+        inset 0px 0px 0px 0px #0001,
+        inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+}
+
+div.comment-submit-btn button:after {
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+
+}
+
+div.tags-txt-div {
+    font-size: 120%;
+    display: block !important;
+    opacity: 1.0 !important;
+}
+
+div.tags-div {
+    border: 1px solid #d99058;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+div.tags-div div {
+    opacity: 0.7;
+    overflow: hidden;
+    word-wrap: break-word;
+    display: inline;
+    padding: 5px;
+}
+
+
+div.related-posts-div {
+    border: 1px solid #d99058;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+div.rel-pst-txt-div {
+    font-size: 120%;
+}
+
+div.related-posts-div :not(div.rel-pst-txt-div) {
+    opacity: 0.5;
+    display: inline-block;
+    margin: 5px;
+    margin-left: 0px;
+}
+
+div.related-posts-div :not(div.rel-pst-txt-div):hover {
+    opacity: 1;
+}
+
+div.related-posts-div a {
+    padding: 10px;
+    color: #323232;
+    background-color: #cc3333;
+    border-radius: 5px;
+    /* position: relative; */
+    /* min-width: 50px;
+    max-width: 50px; */
+}
+
+div.related-posts-div sub {
+    font-size: 50%;
+    max-width: 50px;
+    overflow: hidden;
+    background-color: inherit;
+    /* padding-left: 25px; */
+}
+
+li.search-li {
+    margin-bottom: -15px !important;
+}
+
+div.search-div {
+    padding: none !important;
+    border: none !important;
+}

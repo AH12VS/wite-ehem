@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/errhandler/404.css' %}">
+    <title>404 Page Not Found</title>
+</head>
+
+<body>
+
+    <div class="content-div">
+        <div class="pnf-div">
+            <div class="signs-div">
+                <span>$</span>
+                <span>)</span>
+                <span>$</span>
+            </div>
+            <div class="text-div">
+                <p>Page Not Found</p>
+            </div>
+        </div>
+        <div class="links-div">
+            <a href="{% url 'home:home_page' %}">Go to the Home Page</a>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+{% comment %} 
+{% extends "parts/base/base.html" %}
+{% load static %}
+
+{% block title_block %}404 Page Not Found{% endblock %}
+{% block head_block %}<link rel="stylesheet" href="{% static 'style/errhandler/404.css' %}">{% endblock %}
+
+{% block body_block %}
+    <div class="content-div">
+        <div class="pnf-div">
+            <div class="signs-div">
+                <span>$</span>
+                <span>)</span>
+                <span>$</span>
+            </div>
+            <div class="text-div">
+                <p>Page Not Found</p>
+            </div>
+        </div>
+        <div class="links-div">
+            <a href="{% url 'home:home_page' %}">Go to the Home Page</a>
+        </div>
+    </div>
+{% endblock %} 
+{% endcomment %}

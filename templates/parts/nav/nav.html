@@ -1,0 +1,70 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'style/parts/nav/nav.css' %}" />
+
+<div class="nav-div">
+  <ul>
+    <li>
+      <a href="{% url 'home:home_page' %}">Site</a>
+    </li>
+    <li>
+      <a href="{% url 'contactus:contactus_page' %}">Contactus</a>
+    </li>
+    <li>
+      <a href="{% url 'users:user_detail_page' %}">Account</a>
+    </li>
+    <li class="dropdown-li">
+      <a class="dropdown-btn">
+        <div class="menu-line-div-1"></div>
+        <div class="menu-line-div-2"></div>
+        <div class="menu-line-div-3"></div>
+      </a>
+      <div class="dropdown-menu-div">
+        <a href="{% url 'home:home_page' %}">Site</a>
+        <a href="{% url 'users:user_detail_page' %}">Account</a>
+        <a href="{% url 'posts:posts_page' %}">Posts</a>
+        <a href="{% url 'about:about_page' %}">About</a>
+      </div>
+    </li>
+    <li class="search-li">
+      <div class="search-div">
+        <form class="search-bar" method="get" action="{% url 'posts:search_page' %}">
+          {% csrf_token %}
+
+          <input type="text" name="search-val" class="search-inp" placeholder="Search..." value="{{ search_val }}" />
+          <button type="submit" name="submit-btn" value="search-btn" class="search-btn"><img src="{% static 'img/parts/nav/magnifying.svg' %}" /></button>
+        </form>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<header class="mobile-resp-header">
+  <div class="nav-wrapper">
+    <nav>
+      <input class="hidden" type="checkbox" id="menuToggle" />
+      <label class="menu-btn" for="menuToggle">
+        <div class="menu"></div>
+        <div class="menu"></div>
+        <div class="menu"></div>
+      </label>
+      <div class="nav-container">
+        <ul class="nav-tabs">
+          <a href="{% url 'home:home_page' %}"><li class="nav-tab" id="nav-tab-1">Site</li></a>
+          <a href="{% url 'contactus:contactus_page' %}"><li class="nav-tab" id="nav-tab-2">Contactus</li></a>
+          <a href="{% url 'users:user_detail_page' %}"><li class="nav-tab" id="nav-tab-3">Account</li></a>
+          <a href="{% url 'posts:posts_page' %}"><li class="nav-tab" id="nav-tab-4">Posts</li></a>
+          <a href="{% url 'about:about_page' %}"><li class="nav-tab" id="nav-tab-5">About</li></a>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="search-div">
+    <form class="search-bar" method="get" action="{% url 'posts:search_page' %}">
+      {% csrf_token %}
+
+      <input type="text" name="search-val" class="search-inp" placeholder="Search..." value="{{ search_val }}" />
+      <button type="submit" name="submit-btn" value="search-btn" class="search-btn"><img src="{% static 'img/parts/nav/magnifying.svg' %}" /></button>
+    </form>
+  </div>
+</header>

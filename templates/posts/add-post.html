@@ -1,0 +1,52 @@
+{% extends "parts/base/base.html" %}
+
+{% load static %}
+
+{% block title_block %}Add Post{% endblock %}
+
+{% block head_block %}
+<link rel="stylesheet" href="{% static 'style/posts/add-post.css' %}">
+<link rel="stylesheet" href="{% static 'style/parts/form/form.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+    <!-- Nav -->
+    {% include "parts/nav/nav.html" %}
+    <!-- End-Nav -->
+
+    <div class="main">
+        <form method="post" enctype="multipart/form-data">
+
+            {% csrf_token %}
+            {{ form.media}}
+
+            <div class="post-title-div">
+                <label for="post-title-id">Post Title</label>
+                <input maxlength="60" type="text" name="title" id="post-title-id" placeholder="Post Title" required>
+            </div>
+            <div class="post-body-div">
+                <label for="post-body-id">Body</label>
+                {% comment %} <textarea name="body" id="post-body-id" placeholder="Post Body" required></textarea> {% endcomment %}
+                {{form.body}}
+            </div>
+            <div class="post-thumbnail-div">
+                <label for="post-thumbnail-id">Upload Thumbnail</label>
+                <input type="file" name="thumbnail" id="post-thumbnail-id">
+            </div>
+            <div class="post-tags-div">
+                <label for="post-tags-id">Tags</label>
+                <input type="text" name="tags" id="post-tags-id" placeholder="#Tags">
+            </div>
+            <div class="post-button-div">
+                <button type="submit">+ Add Post</button>
+            </div>
+
+            <div>
+                {% include "parts/form/form_validation_errors.html" %}
+            </div>
+
+        </form>
+    </div>
+
+{% endblock %}

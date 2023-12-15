@@ -1,0 +1,38 @@
+{% extends "parts/base/base.html" %}
+
+{% load static %}
+
+{% block title_block %}Validate User{% endblock %}
+
+{% block head_block %}
+<link rel="stylesheet" href="{% static 'style/signin/validate-user.css' %}">
+<link rel="stylesheet" href="{% static 'style/parts/form/form.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+<div class="validate-user-form-div">
+    <form method="post">
+        {% csrf_token %}
+            <div class="validate-user-form-inner-div">
+                <div class="validate-token-div">
+                    <label for="validate-token-id">Code</label>
+                    <input type="number" min="1" max="999999" name="code" id="validate-token-id" placeholder="123456">
+                </div>
+                <div class="passwd-div">
+                    <label for="passwd-id">Password</label>
+                    <input type="password" name="passwd" id="passwd-id" minlength="9" maxlength="60" placeholder="witesitepa33" required>
+                </div>
+                <div class="button-div">
+                    <button type="submit">Validate</button>
+                </div>
+            </div>
+            
+            <div>
+                {% include "parts/form/form_validation_errors.html" %}
+            </div>
+
+    </form>
+</div>
+
+{% endblock %}

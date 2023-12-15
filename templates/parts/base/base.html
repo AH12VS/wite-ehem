@@ -1,0 +1,42 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Halioss">
+        <meta name="description" content="Wite Site">
+        <meta name="keyword" content="Wite, Site, Halioss, Posts">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title_block %} {% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'style/parts/base/base.css' %}">
+        <link rel="icon" href="{% static 'img/parts/title/wite-logo.svg' %}">
+        {% block head_block %} {% endblock %}
+    </head>
+    <body onload="loader_func()">
+        <div id="loader">
+
+        </div>
+        <div style="display: none;" id="body_block_div">
+            {% block body_block %}
+
+            {% endblock %}    
+        </div>
+ 
+        <script>
+            var var1;
+            
+            function loader_func() {
+              var1 = setTimeout(showPage, 0);
+            }
+            
+            function showPage() {
+              document.getElementById("loader").style.display = "none";
+              document.getElementById("body_block_div").style.display = "block";
+            }
+        </script>
+
+    </body>
+    <script>
+        {% block script_block %}{% endblock %}
+    </script>
+</html>

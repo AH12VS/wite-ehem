@@ -1,0 +1,26 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'style/parts/footer/footer.css' %}">
+
+<div class="footer-div">
+    <div class="footer-links-div">
+        <a href="#">footer</a>
+        <a href="#">link</a>
+        <a href="#">more</a>
+    </div>
+    <div class="footer-links-div">
+        <a href="#">footer</a>
+        <a href="#">link</a>
+        <a href="#">more</a>
+    </div>
+    <div class="copyr-div">
+        <a href="{% url 'copyr:copyr_page' %}">
+            Copyright ZIAD &copy;
+        </a>
+    </div>
+    <div class="about-div">
+        <a href="{% url 'about:about_page' %}">
+            About
+        </a>
+    </div>
+</div>

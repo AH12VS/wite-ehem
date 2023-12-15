@@ -1,0 +1,45 @@
+div.footer-div {
+    clear: both;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    box-shadow:
+    -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001,
+    inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001,
+    inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+}
+
+div.footer-links-div {
+    text-align: center;
+    float: left;
+    margin: 50px;
+    margin-left: 25px;
+}
+
+div.footer-links-div a {
+    display: block;
+    margin: 10px;
+}
+
+div.copyr-div {
+    text-align: center;
+    font-size: 90%;
+    opacity: 0.5;
+    display: block;
+    margin: 10px;
+    margin-top: 20px;
+    clear: both;
+}
+
+div.about-div {
+    text-align: center;
+    font-size: 90%;
+    opacity: 0.5;
+    display: block;
+    margin: 10px;
+    margin-top: 20px;
+    clear: both;
+}

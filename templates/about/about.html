@@ -1,0 +1,50 @@
+{% extends "parts/base/base.html" %}
+
+{% load static %}
+
+{% block title_block %}About{% endblock %}
+
+{% block head_block %}
+    <link rel="stylesheet" href="{% static 'style/about/about.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+{% endblock %}
+
+{% block body_block %}
+
+    {% include "parts/nav/nav.html" %}
+
+    <div class="main">
+        <div class="creators-div">
+            <p>
+                Programmer: Halioss
+            </p>
+            <p>
+                Designer: Halioss
+            </p>
+        </div>
+        <div class="technologies-div">
+            <p>
+                Site Made With
+            </p>
+            <img src="{% static 'img/about/html-icon.svg' %}">
+            <img src="{% static 'img/about/css-icon.svg' %}">
+            <img src="{% static 'img/about/python-icon.svg' %}">
+            <img src="{% static 'img/about/dj-icon.svg' %}">
+            <img src="{% static 'img/about/postgresql-icon.svg' %}">
+            <br><br><br>
+            <i class="devicon-html5-plain colored"></i>
+            <i class="devicon-css3-plain colored"></i>
+            <i class="devicon-python-plain colored"></i>
+            <i class="devicon-django-plain colored"></i>
+            <i class="devicon-postgresql-plain colored"></i>
+            <br><br><br>
+            <i class="devicon-html5-plain"></i>
+            <i class="devicon-css3-plain"></i>
+            <i class="devicon-python-plain"></i>
+            <i class="devicon-django-plain"></i>
+            <i class="devicon-postgresql-plain"></i>
+        </div>
+    </div>
+
+    {% include "parts/footer/footer.html" %}
+{% endblock %}

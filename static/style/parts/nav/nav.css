@@ -1,0 +1,304 @@
+/* desktop nav-bar */
+/* desktop nav-bar <-> hide resp nav-bar */
+header.mobile-resp-header {
+    display: none;
+}
+
+/* desktop nav-bar <-> hide resp nav-bar */
+
+div.nav-div {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 10px !important;
+    background-color: #E9E9E9;
+    /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px; */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 20px -20px;
+    z-index: 1000;
+}
+
+div.nav-div ul {
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    background-color: inherit;
+}
+
+div.nav-div li {
+    padding: 10px;
+    display: inline;
+    background-color: inherit;
+}
+
+div.nav-div li a {
+    background-color: inherit;
+}
+
+div.nav-div li.dropdown-li {
+    float: right;
+    margin-top: -15px;
+}
+
+a.dropdown-btn div {
+    width: 30px;
+    height: 5px;
+    background-color: #0067a5;
+    margin: 5px;
+}
+
+div.dropdown-menu-div {
+    display: none;
+    position: absolute;
+    background-color: inherit;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    margin-right: 200px;
+    opacity: 0.75;
+}
+
+a.dropdown-btn:hover div {
+    background-color: #0067a5;
+}
+
+div.dropdown-menu-div a {
+    display: block;
+    padding: 15px;
+    opacity: 1;
+}
+
+.dropdown-li:hover .dropdown-menu-div {
+    display: block;
+    margin-left: -130px;
+    margin-top: 10px;
+}
+
+li.search-li {
+    float: right;
+    margin-top: -10px;
+}
+
+div.search-div {
+    margin: 0;
+    /* padding: 1px !important; */
+    /* border: 1px solid #6209AB !important; */
+    border-radius: 3px !important;
+}
+
+div.search-div form {
+    /* border: 1px solid #0067a5 !important; */
+    margin-bottom: -15px;
+    margin-bottom: -5px;
+    border-radius: 0px;
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5), -4px -4px 6px 0 rgba(116, 125, 136, .2), inset -4px -4px 6px 0 rgba(255, 255, 255, .5), inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+
+div.search-div:hover {
+    box-shadow: rgba(17, 12, 46, 0.15) 10px 60px 100px 10px !important;
+}
+
+li.search-li input {
+    display: inline !important;
+    width: 87% !important;
+    font-size: 100% !important;
+    border: none !important;
+    outline: none !important;
+    padding: 1px !important;
+}
+
+li.search-li button {
+    width: 10%;
+    border-radius: 3px;
+    border: 1px solid #E9E9E9;
+}
+
+body button:hover {
+    border: 1px solid #E9E9E9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+body button:active {
+    background-color: #E9E9E9;
+    color: #CFCFCF;
+}
+
+li.search-li button>img {
+    width: 15px !important;
+    margin: 3.5px !important;
+    border: none !important;
+}
+
+/* desktop nav-bar */
+
+
+/* resp nav-bar */
+@media screen and (max-width: 1024px) {
+    div.nav-div {
+        display: none;
+    }
+
+    header.mobile-resp-header {
+        display: block;
+    }
+
+    input.hidden {
+        display: none;
+    }
+
+    .nav-container {
+        position: fixed;
+        display: none;
+        overflow-y: auto;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100%;
+        background: #fff;
+        box-shadow: -1px 0 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-tabs {
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+    }
+
+    .nav-tab:not(:last-child) {
+        padding: 20px 25px;
+        margin: 0;
+        border-right: unset;
+        border-bottom: 1px solid #f5f5f5;
+    }
+
+    .nav-tab:last-child {
+        padding: 15px 25px;
+    }
+
+    .menu-btn {
+        /* position: relative;
+        display: block;
+        margin: 0;
+        width: 20px;
+        height: 15px;
+        cursor: pointer;
+        z-index: 2;
+        padding: 10px;
+        border-radius: 10px; */
+        margin: 0; /* to move menu button to left side */
+        position: relative;
+        display: block;
+        width: 25px;
+        height: 20px;
+    }
+
+    .menu-btn .menu {
+        display: block;
+        width: 100%;
+        height: 3px;
+        border-radius: 2px;
+        background: #111;
+        background-color: #0067a5;
+    }
+
+    .menu-btn .menu:nth-child(2) {
+        margin-top: 4px;
+        opacity: 1;
+    }
+
+    .menu-btn .menu:nth-child(3) {
+        margin-top: 4px;
+    }
+
+    nav label {
+        width: 100%;
+    }
+
+    ul {
+        margin: 1px;
+        background-color: #e8e6e3;
+    }
+
+    li {
+        background-color: #e8e6e3;
+    }
+
+    /* li#nav-tab-2 {
+        list-style-image: url("/static/img/parts/nav/contactus.svg") 10px;
+        list-style-position: outside;
+    } */
+
+    #menuToggle:checked+.menu-btn .menu {
+        transition: transform 0.2s ease;
+    }
+
+    #menuToggle:checked+.menu-btn .menu:nth-child(1) {
+        transform: translate3d(0, 6px, 0) rotate(45deg);
+    }
+
+    #menuToggle:checked+.menu-btn .menu:nth-child(2) {
+        transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+        opacity: 0;
+    }
+
+    #menuToggle:checked+.menu-btn .menu:nth-child(3) {
+        transform: translate3d(0, -6px, 0) rotate(-45deg);
+    }
+
+    #menuToggle:checked~.nav-container {
+        z-index: 1;
+        display: flex;
+        animation: menu-slide-left 0.3s ease;
+    }
+
+    @keyframes menu-slide-left {
+        0% {
+            transform: translateX(200px);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    div.nav-wrapper nav {
+        padding: 10px;
+    }
+
+    div.search-div form {
+        margin-bottom: 15px !important;
+        padding: 5px !important;
+    }
+
+    div.search-div input {
+        display: inline !important;
+        width: 87% !important;
+        font-size: 125% !important;
+        border: none !important;
+        outline: none !important;
+        padding: 1px !important;
+    }
+
+    div.search-div button {
+        width: 10%;
+        border-radius: 3px;
+        border: 1px solid #E9E9E9;
+    }
+
+    div.search-div button>img {
+        width: 23px !important;
+        margin: 3.5px !important;
+        border: none !important;
+    }
+
+
+
+
+}
+
+/* resp nav-bar */

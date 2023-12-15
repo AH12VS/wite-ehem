@@ -1,0 +1,42 @@
+div.login-form-div {
+    width: 50%;
+    margin: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+div.login-form-div div {
+    margin: 5%;
+}
+
+div.signin-redirect-div {
+    padding-top: 10%;
+}
+
+div.signin-redirect-div div {
+    margin: 5%;
+    text-align: center;
+}
+
+/* div.signin-redirect-div a {
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.7;
+}
+
+div.signin-redirect-div a:hover {
+    color: #C96FFF;
+    opacity: 1;
+}
+ */
+
+
+@media screen and (max-width: 1024px) {
+    div.login-form-div {
+        width: 100%;
+    }
+
+    form {
+        margin: 5%;
+    }
+}

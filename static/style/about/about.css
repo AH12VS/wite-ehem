@@ -1,0 +1,113 @@
+* {
+    background-color: #E9E9E9;
+    /* color: #d99058; */
+
+}
+
+div.main {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001,
+        inset 0px 0px 0px 0px #fff9,
+        inset 0px 0px 0px 0px #0001,
+        inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+}
+
+div.main div {
+    margin: 10%;
+    box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001,
+        inset 0px 0px 0px 0px #fff9,
+        inset 0px 0px 0px 0px #0001,
+        inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+}
+
+div.main p {
+    font-size: 150%;
+    font-weight: 1000;
+}
+
+div.technologies-div {
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+
+div.technologies-div p {
+    padding-top: 5%;
+    padding-bottom: 1%;
+}
+
+div.main img {
+    width: 64px;
+    height: 64px;
+    opacity: 0.7;
+    margin: 1%;
+    padding: 1%;
+    border-radius: 5px;
+    box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001,
+        inset 0px 0px 0px 0px #fff9,
+        inset 0px 0px 0px 0px #0001,
+        inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+}
+
+div.main img:hover {
+    opacity: 1;
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+
+div.main i {
+    font-size: 400%;
+    opacity: 0.7;
+    margin: 1%;
+    padding: 1%;
+    border-radius: 5px;
+    box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001,
+        inset 0px 0px 0px 0px #fff9,
+        inset 0px 0px 0px 0px #0001,
+        inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+}
+
+div.main i:hover {
+    opacity: 1;
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+    -4px -4px 6px 0 rgba(116, 125, 136, .2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+
+
+@media screen and (max-width: 1024px) {
+    div.main {
+        margin: 5%;
+    }    
+    div.main img {
+        margin: 3%;
+    }
+    div.main i {
+        margin: 5%;
+    }
+}

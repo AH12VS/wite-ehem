@@ -1,0 +1,163 @@
+/* align footer in this page */
+div.footer-div {
+    margin: 1%;
+}
+
+/* align posts */
+div.body-div {
+    margin: 1%;
+    text-align: center;
+    vertical-align: auto;
+}
+
+/* align posts */
+
+/* post */
+div.post-div {
+    display: inline-block;
+    min-width: 210px;
+    min-height: 180px;
+    max-width: 210px;
+    max-height: 180px;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 12px;
+    margin-top: 25px;
+    box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001,
+        inset 0px 0px 0px 0px #fff9,
+        inset 0px 0px 0px 0px #0001,
+        inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+}
+
+div.post-div:hover {
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+
+/* post <-> tumbnail */
+div.post-tumbnail-div {
+    max-width: 100%;
+    max-height: 100px;
+}
+
+div.post-tumbnail-div img {
+    padding: 1px;
+    background-color: #0067a5;
+    text-align: center;
+    border-radius: inherit;
+    min-width: 100%;
+    min-height: 100px;
+    max-width: 100%;
+    max-height: 100px;
+    overflow: auto;
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+
+}
+
+/* post <-> tumbnail */
+
+/* post <-> title */
+div.post-title-div {
+    margin-left: 0.5%;
+    margin-top: 3%;
+    background-color: #00a693;
+    text-align: center;
+    border-radius: inherit;
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 20px;
+    overflow: auto;
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+
+div.post-title-div span {
+    background-color: inherit;
+}
+
+/* post <-> title */
+
+/* post <-> tags */
+div.post-div div.tags {
+    background-color: #cc3333;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 14px;
+    opacity: 0.9;
+    min-width: 100px;
+    min-height: 20px;
+    max-width: 100px;
+    max-height: 20px;
+    overflow: auto;
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+
+div.post-div div.tags>a {
+    background-color: inherit;
+    color: #323232;
+}
+
+div.post-div div.tags>a:hover {
+    background-color: inherit;
+    color: #323232;
+    opacity: 1;
+}
+
+/* post <-> tags */
+
+/* post <-> author */
+div.post-div div.author {
+    background-color: #cc3333;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: -5px;
+    font-size: 15px;
+    opacity: 0.9;
+    max-width: 120px;
+    max-height: 15px;
+    text-align: center;
+    overflow: auto;
+    margin-left: 130px;
+    margin-right: 5px;
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+
+div.post-div div.author>a {
+    background-color: inherit;
+}
+
+div.post-div div.author>a:hover {
+    background-color: inherit;
+    color: #323232;
+}
+
+/* post <-> author */
+/* post */
+
+/* classy poem */
+div.classy-poems-div {
+    text-align: center;
+    opacity: 0.9;
+    font-size: 110%;
+    margin-top: 5%;
+}
+
+/* classy poem */

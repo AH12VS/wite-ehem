@@ -1,0 +1,61 @@
+/* purple:#6209AB-#A64DEF-#C96FFF-#BA7EEE | white:#F3F3F3-#E9E9E9 */
+
+* {
+    font: 101% Arial, sans-serif;
+    background-color: #F3F3F3;
+    color: #333333;
+}
+
+div.signin-form-div {
+    width: 50%;
+    margin: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+div.sex-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* div.sex-div {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+div.sex-div label {
+    display: inline;
+    width: 50%;
+}
+
+div.sex-div input {
+    box-sizing: border-box;
+    display: inline;
+    width: 50%;
+    float: right;
+    clear: both;
+} */
+
+div.signin-form-div div {
+    margin: 5%;
+}
+
+div.login-redirect-div {
+    padding-top: 10%;
+}
+
+div.login-redirect-div div {
+    margin: 5%;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    div.signin-form-div {
+        width: 100%;
+    }
+    form {
+        margin: 5%;
+    }
+}

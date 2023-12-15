@@ -1,0 +1,67 @@
+{% extends "parts/base/base.html" %}
+
+{% load static %}
+
+{% block title_block %}Contactus{% endblock %}
+
+{% block head_block %}
+<link rel="stylesheet" href="{% static 'style/contactus/contactus.css' %}">
+<link rel="stylesheet" href="/static/style/parts/form/form.css">
+{% endblock %}
+
+{% block body_block %}
+
+    <div class="main">
+        <form method="post">
+
+            {% csrf_token %}
+
+            <div class="fullname-div">
+                <label for="fullname-id">Full Name</label>
+                <input type="text" name="fullname" id="fullname-id" placeholder="Ali Hosseini" required>
+            </div>
+            <div class="email-div">
+                <label for="email-id">E-Mail</label>
+                <input type="email" name="email" id="email-id" placeholder="haliossini@gmail.com" required>
+            </div>
+            <div class="subject-div">
+                <label for="subject-id">Subject</label>
+                <select id="subject-id" name="subject">
+                    <option value="other">Other</option>
+                    <option value="critics">Critics</option>
+                    <option value="suggestion">Suggestion</option>
+                </select>
+            </div>
+            <div class="message-div">
+                <label for="message-id">Message</label>
+                <textarea name="message" id="message-id"></textarea>
+            </div>
+            <div class="submit-div">
+                <button type="submit">Submit</button>
+            </div>
+
+            <div class="form-errors">
+                {% if form.errors %}
+                    <div class="form-errors-inner-div">
+                        <p>Please correct these errors</p>
+                        <p> {{form.errors}} </p>
+                        {% for field in form %}
+                            {% if field.erros %}
+                                {% for error in field.erros %}
+                                    <p>{{field.label}} : {{error}}</p>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %} 
+                        
+                        {% if form.non_field_errors %}
+                            {{form.non_field_errors}}
+                        {% endif %}
+
+                    </div>
+                {% endif %}
+            </div>
+
+        </form>
+    </div>
+
+{% endblock %}

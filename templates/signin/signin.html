@@ -1,0 +1,91 @@
+{% extends "parts/base/base.html" %}
+
+{% load static %}
+
+{% block title_block %}Signin{% endblock %}
+
+{% block head_block %}
+<link rel="stylesheet" href="{% static 'style/signin/signin.css' %}">
+<link rel="stylesheet" href="{% static 'style/parts/form/form.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+<div class="signin-form-div">
+
+    <form method="post">
+        {% csrf_token %}
+    
+            <div class="signin-form-inner-div">
+                <legend>Signin</legend>
+                <div class="email-div">
+                    <label for="email-id">Email</label>
+                    <input type="email" name="email" id="email-id" placeholder="haliossini@gmail.com" required>
+                </div>
+                <div class="full-name-div">
+                    <label for="full-name-id">Full Name</label>
+                    <input type="text" name="fullname" id="full-name-id" maxlength="60" placeholder="Ali Hosseini">
+                </div>
+                <div class="passwd-div">
+                    <label for="passwd-id">Password</label>
+                    <input type="password" name="passwd" id="passwd-id" minlength="9" maxlength="60" placeholder="witesitepa33" required>
+                </div>
+                <div class="confrim-passwd-div">
+                    <label for="confrim-passwd-id">Confrim Password</label>
+                    <input type="password" name="confrim_passwd" id="confrim-passwd-id" minlength="9" maxlength="60" placeholder="witesitepa33" required>
+                </div>
+                <div class="age-div">
+                    <label for="age-id">Age</label>
+                    <input type="number" min="1" max="250" name="age" id="age-id" placeholder="16">
+                </div>
+                <div class="sex-div">
+                    <p>
+                        <label for="sex-id">Male</label>
+                        <input type="radio" name="sex", value="male"
+                        {% if account.sex == "male" %}
+                            checked
+                        {% endif %}
+                        >
+                    </p>
+                    <p>
+                        <label for="sex-id">Female</label>
+                        <input type="radio" name="sex", value="female"
+                        {% if account.sex == "female" %}
+                            checked
+                        {% endif %}
+                        > 
+                    </p>
+                    <p>
+                        <label for="sex-id">Other</label>
+                        <input type="radio" name="sex", value="other"
+                        {% if account.sex == "other" %}
+                            checked
+                        {% endif %}
+                        >
+                    </p>
+                </div>
+                <div class="addr-div">
+                    <label for="bio-id">Bio</label>
+                    <textarea name="bio" id="bio-id" placeholder="Bio..."></textarea>
+                </div>
+                <div class="button-div">
+                    <button type="submit">Signin</button>
+                </div>
+            </div>
+            
+            <div>
+                {% include "parts/form/form_validation_errors.html" %}
+            </div>
+
+            <div class="login-redirect-div">
+                <div class="login-redirect-inner-div">
+                    <a href="{% url 'login:login_page' %}">Do you have an account already?</a>    
+                </div>
+            </div>
+
+        
+    </form>
+
+</div>
+
+{% endblock %}

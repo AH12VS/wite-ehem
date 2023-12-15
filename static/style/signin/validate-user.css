@@ -1,0 +1,36 @@
+* {
+    font: 101% Arial, sans-serif;
+    background-color: #F3F3F3;
+    color: #333333;
+}
+
+div.validate-user-form-div {
+    width: 50%;
+    margin: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+div.validate-user-form-div div {
+    margin: 5%;
+}
+
+div.login-redirect-div {
+    padding-top: 10%;
+}
+
+div.login-redirect-div div {
+    margin: 5%;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    div.validate-user-form-div {
+        width: 100%;
+    }
+    form {
+        margin: 5%;
+    }
+}

@@ -1,0 +1,46 @@
+{% extends "parts/base/base.html" %}
+
+{% load static %}
+
+{% block title_block %}Login{% endblock %}
+
+{% block head_block %}
+<link rel="stylesheet" href="{% static 'style/login/login.css' %}">
+<link rel="stylesheet" href="{% static 'style/parts/form/form.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+    <div class="login-form-div">
+        <form method="post">
+
+            {% csrf_token %}
+                <div class="login-form-inner-div">
+                    <legend>Login</legend>
+                    <div class="username-div">
+                        <label for="email-id">Email</label>
+                        <input type="email" name="email" id="email-id" placeholder="haliossini@gmail.com" required>
+                    </div>
+                    <div class="passwd-div">
+                        <label for="passwd-id">Password</label>
+                        <input type="password" name="passwd" id="passwd-id" minlength="9" maxlength="60" placeholder="witesitepa33" required>
+                    </div>
+                    <div class="button-div">
+                        <button type="submit">Login</button>
+                    </div>
+                </div>
+            
+                <div>
+                    {% include "parts/form/form_validation_errors.html" %}
+                </div>
+
+                <div class="signin-redirect-div">
+                    <div class="signin-redirect-inner-div">
+                        <a href="{% url 'signin:signin_page' %}">If you do not have an account you can make one</a>    
+                    </div>
+                </div>
+        </form>
+    </div>
+
+{% endblock %}
+

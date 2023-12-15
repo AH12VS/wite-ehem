@@ -1,0 +1,72 @@
+/* main div */
+div.main {
+    margin: 1% !important;
+}
+
+/* main div */
+
+/* home-nav-bar */
+div.home-nav-bar-div {
+    padding-top: 1%;
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
+}
+
+div.home-nav-bar-div a {
+    margin-right: 1%;
+    padding: 5px;
+    border-radius: 5px;
+    overflow: auto;
+    box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9, 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001, inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001, inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+}
+
+div.home-nav-bar-div a:hover {
+    box-shadow: 0 0 10px 0;
+}
+
+div.home-nav-bar-div a:active {
+    box-shadow: 0 0 10px 5px;
+}
+
+div.home-nav-bar-div a:focus {
+    box-shadow: 0 0 10px 5px;
+    outline: inherit;
+}
+
+/* home-nav-bar */
+
+/* top-div */
+div.site-name-div {
+    margin-top: 25px;
+    padding: 50px;
+    font-size: 1000%;
+    border-radius: 10px;
+    box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9, 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001, inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001, inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+}
+
+/* top-div */
+
+/* middle-div */
+div.middle-posts-div {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 50px;
+    font-size: 500%;
+    border-radius: 10px;
+    word-wrap: break-word;
+    overflow: auto;
+    box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9, 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001, inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001, inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+}
+
+div.middle-posts-div a {
+    padding: 10px;
+    margin-left: 20px;
+    font-size: 45%;
+    border-radius: 10px;
+    border-radius: inherit;
+    box-shadow: inherit;
+    float: right;
+}
+
+/* middle-div */

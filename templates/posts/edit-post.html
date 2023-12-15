@@ -1,0 +1,132 @@
+{% extends "parts/base/base.html" %}
+
+{% load static %}
+
+{% block title_block %}Edit Post:{{post.title}}{% endblock %}
+
+{% block head_block %}
+<link rel="stylesheet" href="{% static 'style/posts/add-post.css' %}">
+<link rel="stylesheet" href="{% static 'style/parts/form/form.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+    <!-- Nav -->
+    {% include "parts/nav/nav.html" %}
+    <!-- End-Nav -->
+
+    <div class="main">
+        <form method="post" enctype="multipart/form-data">
+
+            {% csrf_token %}
+            {{ form.media }}
+
+            <div class="post-status-div">
+                {% if post.status == "published" %}
+                <p>
+                    Warning: We recommend that if you want edit your post it is better to draft it and make a new one
+                </p>
+                {% endif %}
+                
+                <div class="chbx-contain-1">
+                    <div class="chbx-div">
+                        <label for="post-status-id"><span>Post Status</span></label>
+                        <label for="post-status-id" class="switch">
+                            <input type="checkbox" name="check-post-status" id="post-status-id" value="checked" {% if post.status == "published" %}checked{% endif %}>  
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="chbx-div">
+                        <label for="delete-post-id"><span>Delete Post</span></label>
+                        <label for="delete-post-id" class="switch">
+                            <input type="checkbox" name="check-delete-post" id="delete-post-id" value="delete">
+                            <span class="slider"></span>
+                        </label>
+                    </div>    
+                </div>
+                {% comment %} <div class="post-status-inner-div">
+                    <label for="post-status-id">Post Status</label>
+                    <input type="checkbox" name="check-post-status" id="post-status-id" value="checked" {% if post.status == "published" %}checked{% endif %}>  
+                </div>
+                <div class="post-status-inner-div">
+                    <label for="delete-post-id">Delete Post</label>
+                    <input type="checkbox" name="check-delete-post" id="delete-post-id" value="delete">  
+                </div> {% endcomment %}
+            </div>
+
+            <div class="post-title-div">
+                <label for="post-title-id">Post Title</label>
+                <input maxlength="60" type="text" name="title" id="post-title-id" placeholder="Post Title" value="{{post.title}}" required>
+            </div>
+            <div class="post-body-div">
+                <label for="post-body-id">Body</label>
+                <textarea name="body" id="post-body-id" placeholder="Post Body" required onchange="show_res_onchange()">{% autoescape off %}{{post.body}}{% endautoescape %}</textarea>
+                {% comment %} {{ form.body}} {% endcomment %}
+            </div>
+
+
+
+            {% comment %}  {% endcomment %}
+            
+            <div class="post-body-div">
+                <label for="post-body-id">Result</label>
+                {% autoescape off %}
+                    <div id="res-div-id">
+                        
+                    </div>
+                {% endautoescape %}
+            </div>
+
+            {% comment %}  {% endcomment %}
+            
+            
+
+            <div class="post-tags-div">
+                <label for="post-tags-id">Tags</label>
+                <input type="text" name="tags" id="post-tags-id" placeholder="#Tags" value="{% for tag in post.tags.all %} {{tag}}{% endfor %}">
+            </div>
+            <div class="comments-div">
+                <div class="comments-count">
+                    {{comments | length}} comments
+                </div>
+                <div class="comments-div">
+                    {% comment %} <div class="comment">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, quas?
+                    </div> {% endcomment %}
+                    {% for comment in comments %}
+                        <div class="comment">
+                            {{comment.name}}:{{comment.comment}}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="post-button-div">
+                <button type="submit" onclick="edit_btn_onclick()">+-*/ Edit Post</button>
+            </div>
+            <div>
+                {% include "parts/form/form_validation_errors.html" %}
+            </div>
+
+        </form>
+    </div>
+{% endblock %}
+
+{% block script_block %}
+    function edit_btn_onclick() {
+        var delete_post_cond = document.getElementById("delete-post-id");
+        if (delete_post_cond.checked == true) {
+            if (!confirm("Are you sure you want to delete this post?")) {
+                delete_post_cond.checked = false
+            } 
+        }
+    }
+
+    function show_res_onchange() {
+        var simp_edit_var = document.getElementById("post-body-id").value;
+        var res_div_var = document.getElementById("res-div-id");
+    
+        res_div_var.innerHTML = simp_edit_var;
+    
+    }
+{% endblock %}
+

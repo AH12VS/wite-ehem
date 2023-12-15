@@ -1,0 +1,99 @@
+{% extends "parts/base/base.html" %}
+
+{% load static %}
+
+{% block title_block %}User:{{user}}{% endblock %}
+
+{% block head_block %}<link rel="stylesheet" href="{% static 'style/users/user-detail.css' %}">{% endblock %}
+
+{% block body_block %}
+    
+    <!-- Nav -->
+    {% include "parts/nav/nav.html" %}
+    <!-- End-Nav -->
+
+    <div class="main">
+        <div class="user-detail">
+            <div class="user-visual-div">
+                {% if user.image_prof %}
+                    <img src="{{user.image_prof.url}}" alt="{{user.image_prof.url | cut:"/media/images/users/"}}" title="{{user}}">
+                {% else %}
+                    <img src="{% static 'img/users/default-user-icon.svg' %}" alt="default-user-icon">
+                {% endif %}            
+            </div>
+            <div class="field-identifier">
+                Username:
+            </div>
+            <div class="user-name-div">
+                {{user}}
+            </div>
+            {% if user.full_name %}
+                <div class="field-identifier">
+                    Full Name:
+                </div>
+                <div class="user-full-name-div">
+                    {{user.full_name}}
+                </div>    
+            {% endif %}
+            <div class="field-identifier">
+                ID:
+            </div>
+            <div class="user-id-div">
+                {{user.user_unique_id}}
+            </div>
+            {% if user.bio %}
+                <div class="field-identifier">
+                    Bio:
+                </div>
+                <div class="user-bio-div">
+                    {{user.bio}}
+                </div>
+            {% endif %}
+            <div class="text-detail-div">
+                <div class="posts-count">
+                    {{posts|length}} Post{{posts|length|pluralize}}
+                </div>
+            </div>
+            {% comment %} <div class="logout">
+                <a href="{% url 'logout:logout_page' %}">Logout</a>
+            </div>
+            <div class="add-post">
+                <a href="{% url 'users:user_detail_edit_page' %}">Edit your Account</a>
+            </div>
+            <div class="add-post">
+                <a href="{% url 'posts:add_post_page' %}">+ Add Post</a>
+            </div> {% endcomment %}
+            
+            <a href="{% url 'logout:logout_page' %}">Logout</a>
+            
+            <a href="{% url 'users:user_detail_edit_page' %}">Edit your Account</a>
+            
+            <a href="{% url 'posts:add_post_page' %}">+ Add Post</a>
+        
+        
+        </div>
+        {% if posts|length != 0 %}
+            <div class="user-posts-div">
+                <table class="posts-tab">
+                    <tr class="head-row">
+                        <td>Post</td>
+                        <td>Created</td>
+                        <td>Publish</td>
+                        <td>Updated</td>
+                        <td>Status</td>
+                    </tr>
+                    {% for post in posts %}
+                        <tr class="post-row">
+                            <td class="link-td"><a href="{{post.get_absolute_url_for_edit}}">{{post.title}}</a></td>
+                            <td>{{post.created}}</td>
+                            <td>{{post.publish}}</td>
+                            <td>{{post.updated}}</td>
+                            <td>{{post.status}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

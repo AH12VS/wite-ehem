@@ -1,0 +1,48 @@
+{% extends "parts/base/base.html" %}
+
+{% load static %}
+
+{% block title_block %}Change Password{% endblock %}
+
+{% block head_block %}
+<link rel="stylesheet" href="{% static 'style/users/user-change-passwd.css' %}">
+<link rel="stylesheet" href="{% static 'style/parts/form/form.css' %}">
+{% endblock %}
+
+{% block body_block %}
+    <!-- Nav -->
+    {% include "parts/nav/nav.html" %}
+    <!-- End-Nav -->
+
+    <div class="main">
+        <div class="out-form-div">
+            <form method="post">
+                {% csrf_token %}
+                    <div class="user-change-passwd-div">
+
+                        <div class="old-passwd-div">
+                            <label for="old-passwd-id">Old Password</label>
+                            <input type="password" name="old_passwd" id="old-passwd-id" minlength="9" maxlength="60" placeholder="witesitepa33" required>
+                        </div>
+                        <div class="new-passwd-div">
+                            <label for="new-passwd-id">New Password</label>
+                            <input type="password" name="new_passwd" id="new-passwd-id" minlength="9" maxlength="60" placeholder="newwitesitepa33" required>
+                        </div>
+                        <div class="confrim-new-passwd-div">
+                            <label for="confrim-new-passwd-id">Confrim New Password</label>
+                            <input type="password" name="confrim_new_passwd" id="confrim-new-passwd-id" minlength="9" maxlength="60" placeholder="newwitesitepa33" required>
+                        </div>
+                        
+                        <div class="button-div">
+                            <button type="submit">Change</button>
+                        </div>
+                    </div>
+                    <div>
+                        {% include "parts/form/form_validation_errors.html" %}
+                    </div>
+
+            </form>   
+        </div>
+    </div>
+
+{% endblock %}

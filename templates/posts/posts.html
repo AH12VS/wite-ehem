@@ -1,0 +1,118 @@
+{% extends "parts/base/base.html" %}
+
+{% load static %}
+
+{% block title_block %} Postslist {% endblock %}
+
+{% block head_block %}<link rel="stylesheet" href="{% static 'style/posts/posts.css' %}">{% endblock %}
+
+{% block body_block %}
+
+    <div class="main">
+        <!-- Header -->
+        {% include "parts/header/header.html" %}
+        <!-- End-Header -->
+
+        <!-- Nav -->
+        {% include "parts/nav/nav.html" %}
+        <!-- End-Nav -->
+
+        <!-- Content -->
+        <div class="body-div">
+
+            <div class="posts">
+                {% for post in posts %}
+                    {% comment %} <div class="post-div">
+                        <a href="{{post.get_absolute_url}}">
+                            <div class="post-inner-div">
+                                <div class="post-name">{{post.title}}</div>
+                                <div class="pre-post-detail">{{post.body | truncatechars:30}}</div>
+                                <div class="tags">
+
+                                    {% for tag in post.tags.all %}
+                                        <a href="{% url 'posts:posts_filter_tag_page' tag.slug %}">{{tag.name}}</a>
+                                    {% endfor %}
+    
+                                </div>
+
+                                <div class="author"><a href="{{post.author.get_absolute_url}}">{{post.author}}</a></div>
+
+                            </div> 
+                        </a>
+                    </div> {% endcomment %}
+
+                    
+
+                    <div class="post-div">
+                        <a href="{{post.get_absolute_url}}">
+                            <div class="post-inner-div">
+                                <div class="post-tumbnail-div">
+                                    {% if post.thumbnail %}
+                                    <img src="{{post.thumbnail.url}}" alt="{{post.title}}" title="{{post.title}}">
+                                    {% else %}
+                                        <img src="{% static 'img/posts/def-post-img.svg' %}" alt="{{post.title}}" title="{{post.title}}">
+                                    {% endif %}
+                                </div>
+                                <div class="post-title-div">
+                                    <span>
+                                        {{post.title}}
+                                    </span>
+                                </div>
+                                <div class="tags">
+                                    {% for tag in post.tags.all %}
+                                        <a href="{% url 'posts:posts_filter_tag_page' tag.slug %}">{{tag.name}}</a>
+                                    {% endfor %}    
+                                </div>
+
+                                <div class="author"><a href="{{post.author.get_absolute_url}}">{{post.author}}</a></div>
+
+                            </div>    
+                        </a>
+                    </div>
+
+
+                {% empty %}
+
+                    <div class="post-div">
+                        <a href="#">
+                            <div class="post-inner-div">
+                                <div class="post-tumbnail-div">
+                                    <img src="{% static 'img/posts/def-post-img.svg' %}" alt="NOPOST" title="NOPOST">
+                                </div>
+                                <div class="post-title-div">
+                                    <span>
+                                        NO-POST
+                                    </span>
+                                </div>
+                                <div class="tags">
+                                    NOPOST
+                                </div>
+
+                                <div class="author"><a>NOPOST</a></div>
+
+                            </div>    
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- End-Content -->
+
+        <!-- Pagination -->
+        {% include "parts/pagination/pagination.html" %}
+        <!-- End-Pagination -->
+
+        <div class="classy-poems-div">
+            <p>
+                شاعر میفرماید: {{classy_poems | random}}
+            </p>    
+        </div>
+
+        <!-- Footer -->
+        {% include "parts/footer/footer.html" %}
+        <!-- End-Footer -->
+
+    </div>
+
+   
+{% endblock %}

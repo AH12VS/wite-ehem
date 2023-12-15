@@ -1,0 +1,33 @@
+* {
+    margin: auto;
+}
+
+div.main {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+div.user-change-passwd-div {
+    margin: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+div.user-change-passwd-div div {
+    margin: 5%;
+}
+
+
+@media screen and (max-width: 1024px) {
+    div.main {
+        margin: 0;
+        width: 100%;
+    }
+
+    div.main form {
+        margin: 0;
+        margin: 5% !important;
+    }
+}

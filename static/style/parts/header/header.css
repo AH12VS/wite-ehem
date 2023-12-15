@@ -1,0 +1,58 @@
+div.header-div {
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px !important;
+    background-color: #E9E9E9;
+    /* box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5); */
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+div.header-div a {
+    font-size: 125%;
+}
+
+div.main-page-div {
+    float: left;
+    font-size: 250%;
+}
+
+div.user-detail-div {
+    float: right;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+div.user-detail-div:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+span.user-name-span {
+    float: right;
+    margin-top: 15px;
+    margin-right: 5px;
+    max-width: 150px;
+    overflow: scroll;
+}
+
+span.user-visual-span {
+    float: right;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #6209AB;
+}
+
+span.user-visual-span img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+span.user-visual-span img:hover {
+    transform: scale(1.5);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}

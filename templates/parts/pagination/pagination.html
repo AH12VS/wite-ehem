@@ -1,0 +1,21 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'style/parts/pagination/pagination.css' %}">
+
+<div class="pagination-div">
+    <span class="pagination-spn">
+        {% if posts.has_previous %}
+            <a href="?page={{ posts.previous_page_number }}"> ❮ </a>
+        {% endif %}
+        {% for page_num in posts.paginator.page_range %}
+            {% if page_num == posts.number %}
+                <a href="#" class="current-page-number">{{page_num}}</a>
+            {% else %}
+                <a href="?page={{page_num}}">{{page_num}}</a>
+            {% endif %}
+        {% endfor %}
+        {% if posts.has_next %}
+            <a href="?page={{posts.next_page_number}}">❯</a>
+        {% endif %}
+    </span>
+</div>
